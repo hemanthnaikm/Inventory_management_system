@@ -5,6 +5,17 @@ This project is a desktop-based inventory dashboard developed in Java using the 
 
 <img width="1483" height="928" alt="image" src="https://github.com/user-attachments/assets/e94f8c1f-ad6e-4231-a85b-57e6a1a3c232" />
 
+## How to Setup
+
+Follow these steps to configure your local environment and run the desktop application:
+
+1. **Verify Prerequisites**: Ensure you have Java JDK 11 or higher installed on your system. You will also need a local instance of the MySQL Server database engine running and an IDE such as Eclipse.
+2. **Setup the Database Credentials**: Open the project source file `InventoryApp.java` inside your workspace. Navigate to the database configuration parameters at the top of the file and ensure that the `USERNAME` and `PASSWORD` fields match your local MySQL server setup (the default configured value is user "root" with password "1122").
+3. **Add Dependencies**: This application requires the official MySQL Connector/J driver to establish connectivity between the Java environment and the database backend. Download the `mysql-connector-j-x.x.x.jar` file and add it to your project's Build Path or external library references in Eclipse.
+4. **Compile and Build**: Refresh the project tree inside your development environment to resolve dependencies. Compile the code to ensure that all class structures, swing layouts, and SQL driver imports resolve correctly.
+5. **Run the Initialization**: Locate and run the `InventoryApp.java` file as a Java application. On its initial launch cycle, the engine will safely connect using universal parameters to discover whether the target database exists. If missing, it automatically creates the database schema `inventory_management_db` and builds the storage tables.
+6. **Manage Inventory Records**: Use the input dashboard panel on the left to add your product data. Fill in the SKU, Name, Quantity, Price, and Status fields, then submit entries to watch the persistent inventory tracking sheets and real-time visualization graphs refresh instantly.
+
 ## How It Works
 When the application is launched, it attempts to connect to your local MySQL server using specified host, port, and password credentials. It automatically creates the target database and the required inventory table if they do not already exist. 
 
